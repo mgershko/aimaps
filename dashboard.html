@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GIS Platform - Map View</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="container">
+    <div class="sidebar" id="sidebar">
+      <div class="section-header history-item" data-section="home">
+        <a href="index.html" class="home-icon">
+        <span>Home</span>
+        </a>
+      </div>
+      
+      <div class="section-header" data-section="history">
+        <span>History</span>
+        <span class="icon chevron-down" id="history-icon"></span>
+      </div>
+      <div class="section-content" id="history-content">
+        <div class="history-item">
+          <a href="map.html" target="_self">
+            <span>Map roads and train infrastructure in </span>
+            <span class="location">Auckland</span>
+          </a>
+        </div>
+        <div class="history-item">
+          <span>Show rivers and water quality in </span>
+          <span class="location">New Zealand</span>
+        </div>
+        <div class="history-item">
+          <span>Health facilities and areas with patients with diabetes in </span>
+          <span class="location">Wellington region</span>
+        </div>
+      </div>
+      
+      <div class="section-header" data-section="dashboards">
+        <span>Dashboards</span>
+        <span class="icon chevron-right" id="dashboards-icon"></span>
+      </div>
+      <div class="section-content active" id="dashboards-content">
+        <div class="history-item">
+          <a href="dashboard.html" target="_self">
+            <span>Dashboard 1</span>
+          </a>
+        </div>
+        <div class="history-item">
+          <spa>Dashboard 2</spa>
+        </div>
+        <div class="history-item">
+          <span>Interactive Map View</span>
+        </div>
+        <div class="history-item">
+          <span>Annual Report</span>
+        </div>
+      </div>
+      
+      <div class="section-header" data-section="projects">
+        <span>Projects</span>
+        <span class="icon chevron-right" id="projects-icon"></span>
+      </div>
+      <div class="section-content" id="projects-content">
+        <div class="history-item">
+          <a href="project.html" target="_self">
+            <span>Project 1</span>
+          </a>
+        </div>
+        <div class="history-item">Project 2</div>
+        <div class="history-item">Canterbury Analysis</div>
+        <div class="history-item">Auckland Transport</div>
+      </div>
+    </div>
+    
+    <div class="main-content">
+      <div class="top-bar">
+        <button class="toggle-button" id="toggle-button"><span></span></button>
+        <div class="top-right-icons">
+          <button title="Settings">⚙️</button>
+          <button title="User Account">👤</button>
+        </div>
+      </div>
+      <div class="map-container">
+        <img src="img/dashboard1.png" alt="Map of Auckland" class="map-image">
+      </div>
+      <textarea type="text" class="search-bar" placeholder="Type what you need: a map, a report, or full analysis. We'll take care of the rest."></textarea>
+      <div class="button-group">
+        <button><span>+</span>Create Map Manually</button>
+        <button><span>⊞</span> Create Dashboard</button>
+        <button><span>⊢</span> Create Project</button>
+      </div>
+    </div>
+  </div>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const sectionHeaders = document.querySelectorAll('.section-header');
+      const sidebar = document.getElementById('sidebar');
+      const toggleButton = document.getElementById('toggle-button');
+      
+      sectionHeaders.forEach(header => {
+        header.addEventListener('click', function() {
+          const sectionName = this.getAttribute('data-section');
+          const content = document.getElementById(`${sectionName}-content`);
+          const icon = document.getElementById(`${sectionName}-icon`);
+          
+          content.classList.toggle('active');
+          
+          if (content.classList.contains('active')) {
+            icon.classList.remove('chevron-right');
+            icon.classList.add('chevron-down');
+          } else {
+            icon.classList.remove('chevron-down');
+            icon.classList.add('chevron-right');
+          }
+        });
+      });
+      
+      toggleButton.addEventListener('click', function() {
+        sidebar.classList.toggle('hidden');
+        toggleButton.classList.toggle('hidden');
+      });
+
+      const textarea = document.querySelector('.search-bar');
+      textarea.addEventListener('input', function () {
+        this.style.height = 'auto';
+        this.style.height = Math.min(this.scrollHeight, 100) + 'px';
+      });
+    });
+  </script>
+</body>
+</html>

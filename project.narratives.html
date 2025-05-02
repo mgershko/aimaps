@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GIS Platform - Project Dashboard</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Left Sidebar -->
+    <div class="sidebar" id="sidebar">
+      <div class="section-header history-item" data-section="home">
+        <a href="index.html" class="home-icon">
+          <span>Home</span>
+        </a>
+      </div>
+      
+      <div class="section-header" data-section="history">
+        <span>History</span>
+        <span class="icon chevron-right" id="history-icon"></span>
+      </div>
+      <div class="section-content" id="history-content">
+        <div class="history-item">
+          <a href="map.html" target="_self">
+            <span>Map roads and train infrastructure in </  </span>
+            <span class="location">Auckland</span>
+          </a>
+        </div>
+        <div class="history-item">
+          <span>Show rivers and water quality in </span>
+          <span class="location">New Zealand</span>
+        </div>
+        <div class="history-item">
+          <span>Health facilities ""}
+          <span class="location">Wellington region</span>
+        </div>
+      </div>
+      
+      <div class="section-header" data-section="dashboards">
+        <span>Dashboards</span>
+        <span class="icon chevron-right" id="dashboards-icon"></span>
+      </div>
+      <div class="section-content" id="dashboards-content">
+        <div class="history-item">
+          <a href="dashboard.html" target="_self">
+            <span>Dashboard 1</span>
+          </a>
+        </div>
+        <div class="item">Dashboard 2</div>
+        <div class="item">Interactive Map View</div>
+        <div class="item">Annual Report</div>
+      </div>
+      
+      <div class="section-header" data-section="projects">
+        <span>Projects</span>
+        <span class="icon chevron-down" id="projects-icon"></span>
+      </div>
+      <div class="section-content active" id="projects-content">
+        <div class="history-item">
+          <a href="project.html" target="_self">
+            <span>Project 1</span>
+          </a>
+        </div>
+        <div class="item">Project 2</div>
+        <div class="item">Canterbury Analysis</div>
+        <div class="item">Auckland Transport</div>
+      </div>
+    </div>
+    
+    <!-- Main Content -->
+    <div class="main-content">
+      <div class="top-bar">
+        <div class="left-controls">
+          <button class="toggle-button" id="toggle-button"><span></span></button>
+        </div>
+        <div class="right-controls">
+          <button class="right-toggle-button" id="right-toggle-button"><span></span></button>
+          <div class="top-right-icons">
+            <button title="Settings">⚙️</button>
+            <button title="User Account">👤</button>
+          </div>
+        </div>
+      </div>
+      <div class="map-container">
+        <img src="img/narratives.png" alt="Map of Auckland" class="map-image">
+      </div>
+      <textarea type="text" class="search-bar" placeholder="Type what you need: a map, a report, or full analysis. We'll take care of the rest."></textarea>
+      <div class="button-group">
+        <button><span>+</span> Save Map Manually</button>
+        <button><span>⊞</span> Create Dashboard</button>
+        <button><span>⊢</span> Create Project</button>
+      </div>
+    </div>
+    
+        <!-- Right Sidebar (Project Settings) -->
+        <div class="right-sidebar" id="right-sidebar">
+            <div class="sidebar-title">Project Settings</div>
+            <div class="section-content active">
+              <div class="history-item">
+                <a href="project.html" target="_self">
+                  <span>Project Details</span>
+                </a>
+              </div>
+            <div class="history-item">
+                <a href="project.access-control.html" target="_self">
+                  <span>Access Control</span>
+                </a>
+              </div>
+              <div class="history-item">
+                <a href="project.resource-groups.html" target="_self">
+                  <span>Resource Groups</span>
+                </a>
+              </div>
+              <div class="history-item">
+                <a href="project.distribution-network.html" target="_self">
+                  <span>Distribution Network</span>
+                </a>
+              </div>
+              <div class="history-item">
+                <a href="project.users.html" target="_self">
+                  <span>Users</span>
+                </a>
+              </div>
+              <div class="history-item">
+                <a href="project.containers.html" target="_self">
+                  <span>Containers</span>
+                </a>
+              </div>
+              <div class="history-item">
+                <a href="project.modules.html" target="_self">
+                  <span>Modules</span>
+                </a>
+              </div>
+              <div class="history-item">
+                <a href="project.layers.html" target="_self">
+                  <span>Layers</span>
+                </a>
+              </div>
+              <div class="history-item">
+                <a href="project.datasets.html" target="_self">
+                  <span>Datasets</span>
+                </a>
+              </div>
+              <div class="history-item">
+                <a href="project.connections.html" target="_self">
+                  <span>Connections</span>
+                </a>
+              </div>
+              <div class="history-item">
+                <a href="project.narratives.html" target="_self">
+                  <span>Narratives</span>
+                </a>
+              </div>
+              <div class="history-item">
+                <a href="project.assets.html" target="_self">
+                  <span>Assets</span>
+                </a>
+              </div>
+              <div class="history-item">
+                <a href="project.notifications.html" target="_self">
+                  <span>Notifications</span>
+                </a>
+              </div>
+              <div class="history-item">
+                <a href="project.templates.html" target="_self">
+                  <span>Templates</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const sectionHeaders = document.querySelectorAll('.section-header');
+      const sidebar = document.getElementById('sidebar');
+      const rightSidebar = document.getElementById('right-sidebar');
+      const toggleButton = document.getElementById('toggle-button');
+      const rightToggleButton = document.getElementById('right-toggle-button');
+      
+      sectionHeaders.forEach(header => {
+        header.addEventListener('click', function() {
+          const sectionName = this.getAttribute('data-section');
+          const content = document.getElementById(`${sectionName}-content`);
+          const icon = document.getElementById(`${sectionName}-icon`);
+          
+          if (content && icon) {
+            content.classList.toggle('active');
+            
+            if (content.classList.contains('active')) {
+              icon.classList.remove('chevron-right');
+              icon.classList.add('chevron-down');
+            } else {
+              icon.classList.remove('chevron-down');
+              icon.classList.add('chevron-right');
+            }
+          }
+        });
+      });
+      
+      toggleButton.addEventListener('click', function() {
+        sidebar.classList.toggle('hidden');
+        toggleButton.classList.toggle('hidden');
+      });
+
+      rightToggleButton.addEventListener('click', function() {
+        rightSidebar.classList.toggle('hidden');
+        rightToggleButton.classList.toggle('hidden');
+      });
+
+      const textarea = document.querySelector('.search-bar');
+      textarea.addEventListener('input', function () {
+        this.style.height = 'auto';
+        this.style.height = Math.min(this.scrollHeight, 100) + 'px';
+      });
+    });
+  </script>
+</body>
+</html>
